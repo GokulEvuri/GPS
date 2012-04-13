@@ -3,7 +3,7 @@
 #include "ringbuffer.h"
 
 int main() {
-   char ch;
+   char ch = pop;
    while ((ch = getchar())
          != '\n')
       if (!full()) push(ch);

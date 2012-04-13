@@ -1,8 +1,9 @@
 #include "stack.h"
 
 
-#define MAXSTACK 100
+#define MAXSTACK 269
 #define EMPTYSTACK -1
+
 int top = EMPTYSTACK;
 char items[MAXSTACK];
 int i = -1;
