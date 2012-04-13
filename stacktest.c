@@ -1,10 +1,8 @@
 /* stackmain.c: use stack */
 #include <stdio.h>
-#include "stack.h"
+#include "ringbuffer.h"
 
 int main() {
-
-
    char ch;
    while ((ch = getchar())
          != '\n')

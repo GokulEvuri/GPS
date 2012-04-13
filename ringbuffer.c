@@ -1,4 +1,5 @@
 #include "ringbuffer.h"
+#include <stdio.h>
 
 #define START 0
 #define END 0
@@ -11,7 +12,7 @@ int mark = 0;
 char items[MAXSTACK];
 
 void push(char c) {
-  if(mark>=MAXSTACK){
+  if(full()){
     printf("buffer is full");
   }
   else{
@@ -22,7 +23,7 @@ void push(char c) {
 }
 
 char pop() {
-  if(start==end){
+  if(empty()){
     printf("buffer is empty");
     return -1;
   }
@@ -34,11 +35,12 @@ char pop() {
   }
 }
 
-/*returns -1 if NOT full | in case of buffer is full returns 0*/
-char full()  {
-  return mark>=MAXSTACK
+/*returns 0 if NOT full | in case of buffer is full returns 1*/
+int full()  {
+  return mark>=MAXSTACK;
 }
 
+/*returns 1 if empty | else 0 */
 int empty()  {
-   return start==end
+  return start==end;
 }
